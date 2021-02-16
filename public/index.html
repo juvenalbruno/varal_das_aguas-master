@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="Stylesheet" href="%PUBLIC_URL%/estilo.css" />
+
+  <title>Varal das Águas</title>
+</head>
+
+<body>
+
+  <div id="root"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    (() => {
+      function toJSONString(form) {
+        let obj = {};
+        let element0s = form.querySelectorAll("input, select, textarea");
+        for (let i = 0; i < element0s.length; ++i) {
+          let element = element0s[i];
+          let nome = element.nome;
+          let value = element.value;
+          if (nome) {
+            obj[nome] = value;
+          }
+        }
+        return JSON.stringify(obj);
+      }
+      document.addEventListener("DOMContentLoaded",
+        () => {
+          let form = document.getElementById("upFotos");
+          let output = document.getElementById("output");
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let json = toJSONString(this);
+            output.innerHTML = json;
+          }, false);
+        });
+    })();
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
