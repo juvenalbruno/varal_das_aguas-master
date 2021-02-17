@@ -4,7 +4,7 @@ import Sidebar from './componentes/Sidebar'
 import Contest from './componentes/Contest'
 import About from './componentes/About'
 import Rules from './componentes/Rules'
-import Rodape from './componentes/Rodape'
+import Modal from './componentes/Modal'
 
 export default class App extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class App extends Component {
         <Contest />
         <About />
         <Rules />
-        <Rodape />
+        <Modal />
       </div>
 
     );
